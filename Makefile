@@ -9,3 +9,9 @@ echo-pwd:
 	@echo xx$(pwd)
 
 all: echo-pwd
+
+
+define hidden
+	@echo "This is a hidden target"
+endef
+
