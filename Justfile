@@ -57,3 +57,8 @@ env:
 
 fn a b:
   @echo {{a}} {{b}}
+
+#### default variable
+
+def-var a="hello world":
+  @echo {{a}}
