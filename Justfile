@@ -1,0 +1,60 @@
+# The first line will be used as the default command, thus I think list all is a good default command.
+default:
+  @just --list
+
+
+recipe-name:
+  echo 'This is a recipe!'
+
+# this is a comment
+another-recipe:
+  @echo 'This is another recipe.'
+
+
+### Dependent Commands ###
+
+first:
+  @echo 'This is the first recipe.'
+  @echo '='
+
+second: first
+  @echo 'This is the second recipe.'
+  @echo '=='
+
+second-dev: first
+  @echo 'This is the second recipe for development.'
+  @echo '=='
+
+third:
+  @just second
+  @echo 'This is the third recipe.'
+  @echo '==='
+
+### Working Directory ###
+
+dir:
+  @echo 'This is the working directory.'
+  @pwd
+
+[no-cd]
+dir-no-cd:
+  @echo 'This is the working directory.'
+  @pwd
+
+### Aliases ###
+
+alias f :=first
+
+### Environment Variables ###
+
+set dotenv-load
+
+env:
+  @echo 'This is the environment variable.'
+  @echo $FOO
+
+### Variables ###
+
+fn arg1 arg2:
+  @echo 'This is the function.'
+  @echo 'Arguments:' $(arg1) $(arg2)
