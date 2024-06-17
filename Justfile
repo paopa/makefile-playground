@@ -55,6 +55,5 @@ env:
 
 ### Variables ###
 
-fn arg1 arg2:
-  @echo 'This is the function.'
-  @echo 'Arguments:' $(arg1) $(arg2)
+fn a b:
+  @echo {{a}} {{b}}
