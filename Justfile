@@ -62,3 +62,25 @@ fn a b:
 
 def-var a="hello world":
   @echo {{a}}
+
+
+# ANSI color codes
+# https://gist.github.com/fnky/458719343aabd01cfb17a3a4f7296797
+GREEN := "\u{001b}[32m"
+YELLOW := "\u{001b}[33m"
+RED := "\u{001b}[31m"
+BLUE := "\u{001b}[34m"
+PURPLE := "\u{001b}[35m"
+PINK := "\u{001b}[38;5;201m"
+RESET := "\u{001b}[0m"
+
+
+# see https://makefiletutorial.com/#command-echoingsilencing to understand the @ symbol
+color:
+  @echo "{{ GREEN }}Green{{ RESET }}"
+  @echo "{{ YELLOW }}Yellow{{ RESET }}"
+  @echo "{{ RED }}Red{{ RESET }}"
+  @echo "{{ BLUE }}Blue{{ RESET }}"
+  @echo "{{ PURPLE }}Purple{{ RESET }}"
+  @echo "{{ PINK }}Pink{{ RESET }}"
+
